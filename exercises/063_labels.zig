@@ -116,7 +116,7 @@ pub fn main() void {
             // the ingredient based on its position in the
             // required ingredient list for each food.)
             for (wanted_ingredients) |want_it| {
-                if (required_ingredient == want_it) break true;
+                if (required_ingredient == want_it) break;
             } else continue :food_loop;
         }
 
