@@ -50,12 +50,12 @@ pub fn main(init: std.process.Init) !void {
     // can you go here to find a way to read the content?
     // https://ziglang.org/documentation/master/std/#std.Io.Reader
     // hint: look for a method that reads into a slice
-    const bytes_read = reader.readSliceAll(&content);
+    const bytes_read = try reader.readSliceShort(&content);
 
     // Woah, too screamy. I know you're excited for zigling time but tone it down a bit.
     // Can you print only what we read from the file?
     std.debug.print("Successfully Read {d} bytes: {s}\n", .{
         bytes_read,
-        content[0..18], // change this line only
+        content[0..bytes_read], // change this line only
     });
 }
